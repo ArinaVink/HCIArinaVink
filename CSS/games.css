@@ -1,0 +1,144 @@
+body{
+  height: 100%;
+}
+a{
+  text-decoration: none;
+  font-weight: bold;
+  color: lightblue;
+}
+a:hover{
+  text-decoration: underline;
+  color: black;
+}
+
+a:visited{
+  text-decoration: none;
+}
+h1{
+  font-size:20px;
+  color: lightblue;
+  text-align: center;
+  margin: 0 auto;
+  margin-bottom: 10px;
+}
+h2{
+  font-size:18px;
+  color: lightblue;
+  text-align: center;
+  margin: 0 auto;
+  margin-bottom: 10px;
+}
+
+h3{
+  font-size:16px;
+  color: lightblue;
+  text-align: center;
+  margin: 0 auto;
+  margin-bottom: 10px;
+}
+
+h4{
+  font-size:14px;
+  color: lightblue;
+  text-align: center;
+  margin: 0 auto;
+  margin-bottom: 10px;
+}
+
+p{
+  text-align: left;
+  width: 300px;
+  margin: 0 auto;
+}
+.rules{
+  text-align: center;
+  width: 250px;
+  margin: 0 auto;
+}
+
+img{
+  width: 250px;
+  margin-bottom: 10px;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.watch{
+  height: 50%;
+  width: 125px;
+}
+.jump{
+  margin-top: 50px;
+}
+
+@media screen and (min-device-width: 741px) and (max-device-width: 1024px) {
+
+  h1{
+    font-size: 22px;
+  }
+  h3{
+    font-size:18px;
+
+  }
+
+  h4{
+    font-size:16px;
+
+  }
+
+  img{
+    width: 500px;
+    margin-bottom: 10px;
+  }
+  .watch{
+    height: 50%;
+    width: 150px;
+  }
+
+  p{
+    text-align: left;
+    width: 500px;
+    margin: 0 auto;
+  }
+}
+iframe{
+  display: block;
+  margin:0 auto;
+}
+
+
+@media screen and (min-device-width: 1025px) and (max-device-width: 1600px) {
+.maincontent{
+  text-align: left;
+  width: 500px;
+  margin: 0 auto;
+}
+  h1{
+    font-size: 24px;
+  }
+
+  h3{
+    font-size:20px;
+
+  }
+
+  h4{
+    font-size:18px;
+
+  }
+  img{
+    width: 500px;
+    margin-bottom: 10px;
+  }
+  .watch{
+    height: 50%;
+    width: 200px;
+  }
+
+  p{
+    text-align: left;
+    width: 500px;
+    margin: 0 auto;
+  }
+}

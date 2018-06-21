@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8"/>
+    <title> Computer Vision</title>
+    <link rel="stylesheet" href="../CSS/alg-opmaak.css" type="text/css"/>
+    <link rel="stylesheet" href="../CSS/games.css" type="text/css"/>
+    <link rel="icon" href="../foto/Concept_Universe.png"/>
+  </head>
+  <body>
+    <header>
+      <div class="navContainer">
+        <nav>
+          <div class="navbar">
+            <a href="../index.html">Home</a>
+            <div class="dropdown">
+              <button class="dropbtn">Topics</button>
+                <div class="dropdown-content">
+                  <a href="games.html">Exertion Games</a>
+
+                  <a href="arvr.html">AR&VR</a>
+
+                  <a href="wearables.html">Wearables</a>
+
+                  <a href="ac.html">Artificial creatures</a>
+                </div>
+              </div>
+            <div class="dropdown">
+              <button class="dropbtn"> Workshops</button>
+                <div class="dropdown-content">
+                  <a href="vision.html">Computer Vision</a>
+
+                  <a href="unity.html">Unity/Projection mapping</a>
+
+                  <a href="arduino.html">Arduino</a>
+                </div>
+            </div>
+            <a href="excursion.html">Excursion</a>
+
+            <a href="lab.html">Lab weeks</a>
+          </div>
+        </nav>
+      </div>
+    </header>
+    <div class="jump">
+       <h1> Direct naar: </h1>
+       <p> Voordat u start met de hele pagina door te lezen opzoek naar dat wat relevant is voor u,
+           laat mij helpen! Voor de assigments voor Proccesing naar <a href="#concept"> Assignments</a>.
+       </br>
+         Is dat toch niet wat u zoekt, maar wilt u zien hoe ik uit de voeten ben gekomen met Computer Vision? Ga dan naar <a href="#onderzoek"> Vision</a>. </br>
+         Als laatst heb ik nog een reflectie geschreven die u nog wel zou willen lezen, ga dan naar <a href="#reflectie"> mijn reflectie</a>.
+     </p>
+     </div>
+     <div class="maincontent">
+       <h1 id="concept">The assigments </h1>
+       <p><em> Assignment 1 </em></br>
+         Maak minimaal drie verschillende circels met allemaal andere kleuren, afmetingen en plaatsing.</p>
+         <figure>
+           <img alt="visual" src="../foto/vision/assigmentAvis.PNG"/>
+         </figure>
+         <p>De gebruikte code hiervoor.</p>
+         <figure>
+           <img alt="visual" src="../foto/vision/assigmentAcode.PNG"/>
+         </figure>
+        <p><em> Assigment 2</em></br>
+        Maak minimaal vier verschillende figuren met allemaal andere kleuren, afmetingen en plaatsing.</p>
+        <figure>
+          <img alt="visual" src="../foto/vision/assigmentBvis.PNG"/>
+        </figure>
+        <p>De gebruikte code hiervoor.</p>
+        <figure>
+          <img alt="visual" src="../foto/vision/assigmentBcode.PNG"/>
+        </figure>
+        <p><em> Assigment 3</em></br>
+        Maak minimaal twee verschillende figuren die de muis volgen.</p>
+        <figure>
+          <img alt="visual" src="../foto/vision/assigmentCvis.PNG"/>
+        </figure>
+        <p>De gebruikte code hiervoor.</p>
+        <figure>
+          <img alt="visual" src="../foto/vision/assigmentCcode.PNG"/>
+        </figure>
+      </div>
+
+     <div class="research">
+       <h1 id="onderzoek"> Computer Vision</h1>
+       <h2>Vision</h2>
+       <p> <em> Assigment 1 </em> </br>
+        Maak met FRONTALFACE in plaats van een rechthoeke een circel om het hoofd heen.</p>
+        <figure>
+          <img alt="visual" src="../foto/vision/FACE-CIRCLE.PNG"/>
+        </figure>
+        <p>De gebruikte code hiervoor.</p>
+        <figure>
+          <img alt="visual" src="../foto/vision/face-code.PNG"/>
+        </figure>
+
+        <p> <em> Assigment 2 </em> </br>
+         Maak met EYE in plaats van een rode clownneus of een zwart balkje voor de ogen.</p>
+         <figure>
+           <img alt="visual" src="../foto/vision/neus.PNG"/>
+         </figure>
+         <p>De gebruikte code hiervoor.</p>
+         <figure>
+           <img alt="visual" src="../foto/vision/neus-code.PNG"/>
+         </figure>
+
+         <p> <em> Assigment 3 </em> </br>
+          Verander de code zodat er iets cools gebeurt</p>
+          <figure>
+            <img alt="visual" src="../foto/vision/visioncode.PNG"/>
+          </figure>
+          <p>De gebruikte code hiervoor.</br></br>
+          import gab.opencv.*;</br>
+          import processing.video.*;</br>
+          import java.awt.*;</br></br>
+
+          Capture video;</br>
+          OpenCV opencv;</br>
+          PImage img;</br></br>
+
+          void setup() {</br>
+            size(800, 800); </br>
+            video = new Capture(this, 1280/2, 720/2);</br>
+            opencv = new OpenCV(this, 1280/2, 720/2);</br>
+            opencv.loadCascade(OpenCV.CASCADE_FRONTALFACE);  </br>
+            img = loadImage("../vision.png");</br>
+            video.start(); </br>
+          }</br></br>
+
+          void draw() {</br>
+            scale(2);</br>
+            opencv.loadImage(video);</br></br>
+
+            image(video, 0, 0 );</br>
+            noFill();</br>
+            strokeWeight(3);</br></br>
+
+            Rectangle[] faces = opencv.detect();</br>
+            println(faces.length);</br></br>
+
+            for (int i = 0; i < faces.length; i++) {</br>
+              println(faces[i].x + "," + faces[i].y);</br>
+              image(img, faces[i].x, faces[i].y, faces[i].width, faces[i].height);</br>
+            }</br>
+          }</br></br>
+
+          void captureEvent(Capture c) {</br>
+            c.read();</br>
+          } 	</br></p>
+
+
+      </div>
+
+     <div class="reflection">
+       <h1 id="reflectie"> The reflection</h1>
+       <h2> Algemeen</h2>
+       <p>Processing is voor mij geheel iets nieuws geweest. Ik had er nog nooit van gehoord en ik had ook geen idee wat ik ermee kon doen en moest doen.</br>
+         Het concept van Computer Vision kon ik mij eerder in vinden, al had ik er niet bewust van gehoord. Het deed mij eerder denken aan AI en dat is iets waar ik mij nog in wil verdiepen.
+         Voor de opdracht kon ik de context van Computer Vision nog wel begrijpen.</p></br>
+
+         <h2> Processing</h2>
+         <p>Zoals ik aangaf was voor mij Processing iets nieuws. Ik had wat moeite met het opstarten en mij een weg te vinden in het programma, maar dankzij heldere stappen die ik moest nemen kwam ik aardig ver.</br>
+           Er waren wel onderdelen waar ik wat moeite mee had om dit bij de eerste keer te begrijpen, maar na nog een aantal keer doorlezen en vragen kwam ik ook hier uit. </br></p>
+
+          <h2> Computer Vision</h2>
+          <p> Dankzij het starten met Processing was het toepassen van onderdelen in het codeerprogramma nog wel te doen.
+            Ook hierin ben ik goed ondersteund door de reader wanneer ik er niet uitkwam, maar Google heeft ook goed geholpen met basic vragen. </br></p>
+          <h2>Verbeterpunten en wat ging er goed?</h2>
+          <p> In het vervolg wil ik niet laconiek reageren bij het ontvangen van een nieuwe manier van programmeren.
+            Ik weet goed dat dit alleen is om mij beter te helpen ontwikkelen in het vakgebied, maar ik ben mij ervan bewust dat programmeren niet mijn sterkste kwaliteit is.
+            Mijn reactie is om een bepaalde manier te reageren is om mijzelf te “beschermen”, maar ik ben mij ervan bewust dat dit niet hoeft. Zeker niet in een veilige omgeving van een klaslokaal. </br></br>
+
+            Wat er goed ging, was dat ik aardig door de opdrachten heen ging. Ook stelde ik vragen wanneer dit nodig was. Vragen aan de docent, klasgenoten of Google.
+            Mijn doorzettingsvermogen en wil om nieuwe dingen te leren, zorgen ervoor dat ik wel ervoor ga.</p>
+     </div>
+  </body>
+
+</html>
